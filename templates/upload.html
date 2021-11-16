@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<title>Python Flask Image Upload and Display Example</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+<body style="background: beige;">
+<center>
+
+<h2>Select an image to upload and display</h2>
+	<form method="post" action="/" enctype="multipart/form-data">
+		<div>
+			<img style="border-style: none;" src="{{ url_for('display_image', filename=filename) }}">
+		</div>
+		<label>Choose a Image processing:</label>
+
+		<select name="image" id="image">
+			<option value="gray">Gray</option>
+			<option value="hrc">HRC</option>
+			<option value="sketch">Sketch</option>
+			<option value="oil">Oil</option>
+			<option value="water">Water</option>
+			<option value="original">Original</option>
+
+		</select>
+		<p>
+		<input class="btn btn-primary btn-lg" type="file" name="file" autocomplete="off" required>
+		</p>
+		<input class="btn btn-primary btn-lg" type="submit" value="Submit">
+
+
+	</form>
+</center>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
